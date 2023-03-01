@@ -1,0 +1,59 @@
+﻿*{
+  box-sizing: border-box;
+}
+
+body {
+  background:#ffffff;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 12px;
+}
+
+fieldset{
+  border: 3px solid rgb(30,188,40);
+  width: 35%;
+  max-width: 450px;
+  margin: 20px auto;
+  display: grid;
+  grid-gap: 20px;
+}
+
+fieldset .login{
+  width: 50%;
+}
+
+input[type=password]{
+  border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    font-size: 12px;
+    margin-bottom: 10px;
+    background: #fff;
+    border-top: 1px solid #c0c0c0;
+    border-radius:4px;
+  /* border-radius: 2px; */
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+input[type=text]{
+  border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    font-size: 12px;
+    margin-bottom: 10px;
+    background: #fff;
+    border-top: 1px solid #c0c0c0;
+    border-radius: 4px;
+  /* border-radius: 2px; */
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+img {
+    width: 106px;
+    height: 100px;
+    padding: 5px;
+    border: 3px solid green;
+    float: right;
+    overflow: auto;
+}

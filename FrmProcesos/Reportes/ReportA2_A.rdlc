@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>13cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>2.07257cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox19">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>*</Value>
+                              <Style>
+                                <FontFamily>Code39AzaleaRegular3</FontFamily>
+                                <FontSize>48pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Color>#465678</Color>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!MdAbsEntry.Value</Value>
+                              <Style>
+                                <FontFamily>Code39AzaleaRegular3</FontFamily>
+                                <FontSize>48pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Color>#465678</Color>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>*</Value>
+                              <Style>
+                                <FontFamily>Code39AzaleaRegular3</FontFamily>
+                                <FontSize>48pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Color>#465678</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox19</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="MdAbsEntry">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!MdAbsEntry.Value</GroupExpression>
+                </GroupExpressions>
+                <PageBreak>
+                  <BreakLocation>Between</BreakLocation>
+                </PageBreak>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!MdAbsEntry.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>11cm</Size>
+                <CellContents>
+                  <Textbox Name="Textbox25">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>LOTE: </Value>
+                            <Style>
+                              <FontFamily>Calibri</FontFamily>
+                              <FontSize>50pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>#465678</Color>
+                            </Style>
+                          </TextRun>
+                          <TextRun>
+                            <Value>=Fields!MdAbsEntry.Value</Value>
+                            <Style>
+                              <FontFamily>Calibri</FontFamily>
+                              <FontSize>50pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>#465678</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox25</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>1cm</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox26">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#465678</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox26</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Left>0.3238cm</Left>
+        <Height>2.07257cm</Height>
+        <Width>25cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="Textbox20">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ESPECIE: </Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!Especie.Value</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox20</rd:DefaultName>
+        <Top>3.63489cm</Top>
+        <Left>0.15875cm</Left>
+        <Height>0.88948cm</Height>
+        <Width>13.71833cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox27">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>PROCESO: </Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!U_Proceso.Value</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>18pt</FontSize>
+                  <Color>#4d4d4d</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox20</rd:DefaultName>
+        <Top>2.56646cm</Top>
+        <Left>0.15875cm</Left>
+        <Height>0.91594cm</Height>
+        <Width>14.01792cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox42">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>FECHA: </Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!DocDate.Value</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>18pt</FontSize>
+                  <Format>dd/MM/yyyy</Format>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox20</rd:DefaultName>
+        <Top>3.63489cm</Top>
+        <Left>15.7212cm</Left>
+        <Height>0.88948cm</Height>
+        <Width>8.24505cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line6">
+        <Top>2.24896cm</Top>
+        <Height>0cm</Height>
+        <Width>25.30677cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Textbox23">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>OF:  </Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!BaseEntry.Value</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>18pt</FontSize>
+                  <Color>#465678</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox20</rd:DefaultName>
+        <Top>2.56646cm</Top>
+        <Left>15.7212cm</Left>
+        <Height>0.9663cm</Height>
+        <Width>8.24505cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line7">
+        <Top>4.70076cm</Top>
+        <Left>0.02646cm</Left>
+        <Height>0cm</Height>
+        <Width>25.30677cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Textbox21">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!Dscription.Value</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>30pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox21</rd:DefaultName>
+        <Top>4.73604cm</Top>
+        <Left>0.18521cm</Left>
+        <Height>3.83248cm</Height>
+        <Width>24.98927cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox22">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>PRODUCTOR: (</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>20pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!CodProd.Value</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <Color>#4d4d4d</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>) </Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>20pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!U_NOMBPROD.Value</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <Color>#4d4d4d</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox20</rd:DefaultName>
+        <Top>8.6038cm</Top>
+        <Left>0.18521cm</Left>
+        <Height>2.21765cm</Height>
+        <Width>24.98927cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>4.26041in</Height>
+    <Style />
+  </Body>
+  <Width>9.97371in</Width>
+  <Page>
+    <PageHeader>
+      <Height>3.10584cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox18">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Fields!TipoFruta.Value</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>72pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextDecoration>Underline</TextDecoration>
+                    <Color>#4d4d4d</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox18</rd:DefaultName>
+          <Top>0.10584cm</Top>
+          <Left>0.14552cm</Left>
+          <Height>3cm</Height>
+          <Width>24.98927cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>cuadradoblanco</Value>
+          <MIMEType>image/gif</MIMEType>
+          <Sizing>Fit</Sizing>
+          <Top>0.10584cm</Top>
+          <Left>22.29427cm</Left>
+          <Height>2.87583cm</Height>
+          <Width>2.92875cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Line Name="Line9">
+          <Left>0.01323cm</Left>
+          <Height>0cm</Height>
+          <Width>25.30677cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>4.79806cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox24">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>PESO: </Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>72pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Fields!Quantity.Value</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>72pt</FontSize>
+                    <Format>#,0.00;(#,0.00)</Format>
+                    <Color>#4d4d4d</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox20</rd:DefaultName>
+          <Left>0.17198cm</Left>
+          <Height>2.90188cm</Height>
+          <Width>20.30646cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line8">
+          <Top>0.2074cm</Top>
+          <Left>0.01323cm</Left>
+          <Height>0cm</Height>
+          <Width>25.30677cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+        <Line Name="Line10">
+          <Top>4.34827cm</Top>
+          <Left>0.01323cm</Left>
+          <Height>0cm</Height>
+          <Width>25.30677cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+        <Textbox Name="Textbox28">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>CODIGO CSG: </Value>
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>18pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Fields!U_Codigo_CSG.Value</Value>
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>18pt</FontSize>
+                    <Color>#4d4d4d</Color>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value xml:space="preserve"> </Value>
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>18pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox20</rd:DefaultName>
+          <Top>3.21547cm</Top>
+          <Left>0.17198cm</Left>
+          <Height>0.91594cm</Height>
+          <Width>14.01792cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <PageHeight>21.59cm</PageHeight>
+    <PageWidth>27.94cm</PageWidth>
+    <LeftMargin>1cm</LeftMargin>
+    <RightMargin>1cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="HDV_P03DataSet11">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>a28116a0-58f9-4eac-8748-0b2e55f112ef</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>HDV_P03DataSet11</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DocEntry">
+          <DataField>DocEntry</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="LineNum">
+          <DataField>LineNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BaseEntry">
+          <DataField>BaseEntry</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BaseLine">
+          <DataField>BaseLine</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DocDate">
+          <DataField>DocDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ItemCode">
+          <DataField>ItemCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Dscription">
+          <DataField>Dscription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="WhsCode">
+          <DataField>WhsCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Comments">
+          <DataField>Comments</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ObjType">
+          <DataField>ObjType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MdAbsEntry">
+          <DataField>MdAbsEntry</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CodProd">
+          <DataField>CodProd</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="U_NOMBPROD">
+          <DataField>U_NOMBPROD</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CodCli">
+          <DataField>CodCli</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="U_NOMBCLI">
+          <DataField>U_NOMBCLI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Salida_Produccion">
+          <DataField>Salida_Produccion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cant_Registros">
+          <DataField>Cant_Registros</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Cant_Aprobado">
+          <DataField>Cant_Aprobado</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Cant_Rechazado">
+          <DataField>Cant_Rechazado</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="id_Calidad">
+          <DataField>id_Calidad</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TipoFruta">
+          <DataField>TipoFruta</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Especie">
+          <DataField>Especie</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="U_Proceso">
+          <DataField>U_Proceso</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="U_Codigo_CSG">
+          <DataField>U_Codigo_CSG</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="logo_tarja">
+          <DataField>logo_tarja</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>HDV_P03DataSet11</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\david\Google Drive\Fuentes\HDV\HDV_SAP 2021-05-13\FrmProcesos\HDV_P03DataSet11.xsd</rd:SchemaPath>
+        <rd:TableName>SAPB1_OPRODUCCION</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>SAPB1_OPRODUCCIONTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="cuadradoblanco">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>685299b2-505d-49b3-a205-684179ce4ffd</rd:ReportID>
+</Report>

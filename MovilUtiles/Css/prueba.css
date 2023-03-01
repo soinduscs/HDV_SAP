@@ -1,0 +1,251 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  html,body {
+    background:#ffffff;
+    font-family:'Cuprum', sans-serif;
+    font-size: 12px;
+
+  }
+  
+ 
+
+  .contenido {
+      display: grid;
+      grid-gap: 5px;
+      grid-template-columns: 300px 200px;
+      grid-template-rows: 60px;
+      padding: 1px;
+      grid-template-areas: "Lote Consulta"
+                           "NumLote ."
+                           "articulo ."
+                           "DescArticulo ."
+                           "Estado Fumigado"
+                           "DescEstado DescFumigado"
+                           "Cliente ."
+                           "DescCliente ."
+                           "Stock UniMedida"
+                           "DescStock DescUniMedi"
+                           "UbiActual ."
+                           "NuevaUbic ."
+                           ". ModUbic";
+      background-color: #ccd9e3;;
+      border-radius:5px;
+      border: 3px solid #227409;
+      width: 100%;
+      height:auto;
+  }
+  
+  .contenido > div {
+      text-align: center;
+      color: rgb(19, 35, 88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      padding: 1px 0;
+  }
+  
+  .Lote {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #227409;
+    height: 47%;
+    grid-area: Lote;
+  }
+
+  .NumLote {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #227409;
+
+    grid-area: NumLote;
+}
+  
+.Consulta {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #227409;
+    height: 47%;
+    grid-area: Consulta;
+  }
+  
+.articulo {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-area: articulo;
+}
+
+.DescArticulo {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: DescArticulo;
+}
+
+.Estado {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: Estado;
+}
+
+.DescEstado {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: DescEstado;
+}
+
+.Fumigado {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: Fumigado;
+}
+
+.DescFumigado {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: DescFumigado;
+}
+
+.Cliente {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: Cliente;
+}
+
+.DescCliente {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: DescCliente;
+}
+
+.Stock {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: Stock;
+}
+
+.DescStock {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: DescStock;
+}
+
+.UniMedida {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: UniMedida;
+}
+
+.DescUniMedi {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: DescUniMedi;
+}
+
+.UbiActual {
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+
+grid-area: UbiActual;
+}
+
+.NuevaUbic {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: NuevaUbic;
+}
+
+.ModUbic {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: ModUbic;
+}
+
+.navbar-inverse {
+  background-color: #4176f4 !important;
+}
+
+ .navbar-inverse .navbar-text {
+    color: #fff !important;
+}
+
+ .navbar-text {
+    margin-top: 7px !important;
+    margin-bottom: 7px !important;
+    margin-left: 7px !important;
+}
+
+  /* latin-ext */
+  @font-face {
+    font-family: Cuprum;
+    font-style: normal;
+    font-weight: 400;
+    src: url(fonts/Cuprum/Cuprum-Regular.ttf) format("truetype");
+  
+  }
+  
+  @media screen and (max-width: 410px) {
+      
+      .container{
+      display: grid;
+      grid-gap: 5px;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas:  "lote"
+                            "NumLote"
+                            "articulo"
+                            "Consulta"; 
+      }
+  
+  }
+  
