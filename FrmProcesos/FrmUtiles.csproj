@@ -1,0 +1,3496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9AE97551-179C-4EF3-B979-0721524C422B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FrmProcesos</RootNamespace>
+    <AssemblyName>Utiles SAP</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Temp\Proyecto\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\172.30.126.230\b1_shr\UtilesSAP\</UpdateUrl>
+    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>FrmProcesos.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>FF1DEAB222B7F4C461B8B1B2CBCDDEB6213E1421</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>FrmProcesos_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>16 %28Design%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Componentes\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1449.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1449.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="netchartdir_cp">
+      <HintPath>..\..\..\..\..\temp\netchartdir_cp.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPBusinessOneSDK, Version=1.0.0.1, Culture=neutral, PublicKeyToken=c7c3cb60e45d119f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP\SAP Business One SDK\Lib\SAPBusinessOneSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsistencia.Designer.cs">
+      <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsistencia1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsistencia1.Designer.cs">
+      <DependentUpon>frmAsistencia1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBinsProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBinsProduccion.Designer.cs">
+      <DependentUpon>frmBinsProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBinsProduccion1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBinsProduccion1.Designer.cs">
+      <DependentUpon>frmBinsProduccion1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBLoqLotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBLoqLotes.Designer.cs">
+      <DependentUpon>frmBLoqLotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalendarioOperadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalendarioOperadores.Designer.cs">
+      <DependentUpon>frmCalendarioOperadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalibres1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalibres1.Designer.cs">
+      <DependentUpon>frmCalibres1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMP.Designer.cs">
+      <DependentUpon>frmCalidadMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMP1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMP1.Designer.cs">
+      <DependentUpon>frmCalidadMP1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMP2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMP2.Designer.cs">
+      <DependentUpon>frmCalidadMP2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMP3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMP3.Designer.cs">
+      <DependentUpon>frmCalidadMP3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMP4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMP4.Designer.cs">
+      <DependentUpon>frmCalidadMP4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMP5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMP5.Designer.cs">
+      <DependentUpon>frmCalidadMP5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMP6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMP6.Designer.cs">
+      <DependentUpon>frmCalidadMP6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMP7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMP7.Designer.cs">
+      <DependentUpon>frmCalidadMP7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMP8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMP8.Designer.cs">
+      <DependentUpon>frmCalidadMP8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMP9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMP9.Designer.cs">
+      <DependentUpon>frmCalidadMP9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPA1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPA1.Designer.cs">
+      <DependentUpon>frmCalidadMPA1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPA2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPA2.Designer.cs">
+      <DependentUpon>frmCalidadMPA2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPA3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPA3.Designer.cs">
+      <DependentUpon>frmCalidadMPA3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPA3_A.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPA3_A.Designer.cs">
+      <DependentUpon>frmCalidadMPA3_A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPA4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPA4.Designer.cs">
+      <DependentUpon>frmCalidadMPA4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPA6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPA6.Designer.cs">
+      <DependentUpon>frmCalidadMPA6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPA7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPA7.Designer.cs">
+      <DependentUpon>frmCalidadMPA7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPA8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPA8.Designer.cs">
+      <DependentUpon>frmCalidadMPA8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPA9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPA9.Designer.cs">
+      <DependentUpon>frmCalidadMPA9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPB1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPB1.Designer.cs">
+      <DependentUpon>frmCalidadMPB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPB2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPB2.Designer.cs">
+      <DependentUpon>frmCalidadMPB2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPB3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPB3.Designer.cs">
+      <DependentUpon>frmCalidadMPB3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPB4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPB4.Designer.cs">
+      <DependentUpon>frmCalidadMPB4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPB5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPB5.Designer.cs">
+      <DependentUpon>frmCalidadMPB5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPB6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPB6.Designer.cs">
+      <DependentUpon>frmCalidadMPB6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPB7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPB7.Designer.cs">
+      <DependentUpon>frmCalidadMPB7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadMPB8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadMPB8.Designer.cs">
+      <DependentUpon>frmCalidadMPB8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPA2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPA2.Designer.cs">
+      <DependentUpon>frmCalidadPPA2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPP.Designer.cs">
+      <DependentUpon>frmCalidadPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPP1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPP1.Designer.cs">
+      <DependentUpon>frmCalidadPP1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPP2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPP2.Designer.cs">
+      <DependentUpon>frmCalidadPP2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPP3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPP3.Designer.cs">
+      <DependentUpon>frmCalidadPP3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPP4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPP4.Designer.cs">
+      <DependentUpon>frmCalidadPP4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPP5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPP5.Designer.cs">
+      <DependentUpon>frmCalidadPP5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPP6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPP6.Designer.cs">
+      <DependentUpon>frmCalidadPP6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPP7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPP7.Designer.cs">
+      <DependentUpon>frmCalidadPP7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPP8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPP8.Designer.cs">
+      <DependentUpon>frmCalidadPP8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPP9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPP9.Designer.cs">
+      <DependentUpon>frmCalidadPP9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPA1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPA1.Designer.cs">
+      <DependentUpon>frmCalidadPPA1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPA3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPA3.Designer.cs">
+      <DependentUpon>frmCalidadPPA3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPA4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPA4.Designer.cs">
+      <DependentUpon>frmCalidadPPA4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPA5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPA5.Designer.cs">
+      <DependentUpon>frmCalidadPPA5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPA6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPA6.Designer.cs">
+      <DependentUpon>frmCalidadPPA6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPA7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPA7.Designer.cs">
+      <DependentUpon>frmCalidadPPA7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPA8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPA8.Designer.cs">
+      <DependentUpon>frmCalidadPPA8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPA9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPA9.Designer.cs">
+      <DependentUpon>frmCalidadPPA9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPB0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPB0.Designer.cs">
+      <DependentUpon>frmCalidadPPB0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPB1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPB1.Designer.cs">
+      <DependentUpon>frmCalidadPPB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPB2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPB2.Designer.cs">
+      <DependentUpon>frmCalidadPPB2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPB3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPB3.Designer.cs">
+      <DependentUpon>frmCalidadPPB3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPB4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPB4.Designer.cs">
+      <DependentUpon>frmCalidadPPB4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPB5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPB5.Designer.cs">
+      <DependentUpon>frmCalidadPPB5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPB6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPB6.Designer.cs">
+      <DependentUpon>frmCalidadPPB6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPB7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPB7.Designer.cs">
+      <DependentUpon>frmCalidadPPB7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPB8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPB8.Designer.cs">
+      <DependentUpon>frmCalidadPPB8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPB9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPB9.Designer.cs">
+      <DependentUpon>frmCalidadPPB9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPC1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPC1.Designer.cs">
+      <DependentUpon>frmCalidadPPC1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidadPPC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidadPPC2.Designer.cs">
+      <DependentUpon>frmCalidadPPC2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmColor.Designer.cs">
+      <DependentUpon>frmColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmColor1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmColor1.Designer.cs">
+      <DependentUpon>frmColor1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfiguracion.Designer.cs">
+      <DependentUpon>frmConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaLote.Designer.cs">
+      <DependentUpon>frmConsultaLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmControlProductor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmControlProductor.Designer.cs">
+      <DependentUpon>frmControlProductor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCorrigeCosto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCorrigeCosto.Designer.cs">
+      <DependentUpon>frmCorrigeCosto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFumigado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFumigado.Designer.cs">
+      <DependentUpon>frmFumigado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFumigado1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFumigado1.Designer.cs">
+      <DependentUpon>frmFumigado1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFumigado2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFumigado2.Designer.cs">
+      <DependentUpon>frmFumigado2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFumigado3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFumigado3.Designer.cs">
+      <DependentUpon>frmFumigado3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFumigado4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFumigado4.Designer.cs">
+      <DependentUpon>frmFumigado4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInforme1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInforme1.Designer.cs">
+      <DependentUpon>frmInforme1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginSupervisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoginSupervisor.Designer.cs">
+      <DependentUpon>frmLoginSupervisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOperadorCracker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOperadorCracker.Designer.cs">
+      <DependentUpon>frmOperadorCracker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOperadorCracker1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOperadorCracker1.Designer.cs">
+      <DependentUpon>frmOperadorCracker1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion.Designer.cs">
+      <DependentUpon>frmOrdenFabricacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion1.Designer.cs">
+      <DependentUpon>frmOrdenFabricacion1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion2.Designer.cs">
+      <DependentUpon>frmOrdenFabricacion2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion3.Designer.cs">
+      <DependentUpon>frmOrdenFabricacion3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion4.Designer.cs">
+      <DependentUpon>frmOrdenFabricacion4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion5.Designer.cs">
+      <DependentUpon>frmOrdenFabricacion5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion6.Designer.cs">
+      <DependentUpon>frmOrdenFabricacion6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion7.Designer.cs">
+      <DependentUpon>frmOrdenFabricacion7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacion8.Designer.cs">
+      <DependentUpon>frmOrdenFabricacion8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionCM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionCM.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionCM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionCO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionCO.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionCO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionCO1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionCO1.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionCO1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionCO2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionCO2.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionCO2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionCO3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionCO3.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionCO3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionINS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS1.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionINS1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS2.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionINS2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS3.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionINS3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS4.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionINS4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS5.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionINS5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS6.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionINS6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionINS7.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionINS7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR1_AR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR1_AR.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR1_AR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR1_R.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR1_R.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR1_R.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR1_A.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR1_A.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR1_A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR2.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR2A.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR2A.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR2A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR4_A.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR4_A.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR4_A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR4_AR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR4_AR.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR4_AR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR4_R.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR4_R.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR4_R.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR5.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR6.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR7_A.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR7_A.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR7_A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR7_A1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR7_A1.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR7_A1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR7_AR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR7_AR.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR7_AR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR7_R.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR7_R.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR7_R.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR8_A.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR8_A.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR8_A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR8_AR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR8_AR.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR8_AR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR8_R.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR8_R.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR8_R.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR9.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR9_A.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR9_A.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR9_A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR9_B.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTR9_B.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTR9_B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTRA1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTRA1.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTRA1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTRA2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTRA2.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTRA2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTRA3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTRA3.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTRA3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTrz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTrz.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTrz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTrz1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTrz1.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTrz1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTrz2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenFabricacionTrz2.Designer.cs">
+      <DependentUpon>frmOrdenFabricacionTrz2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenVentas.Designer.cs">
+      <DependentUpon>frmOrdenVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenVentas1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenVentas1.Designer.cs">
+      <DependentUpon>frmOrdenVentas1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenVentas2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenVentas2.Designer.cs">
+      <DependentUpon>frmOrdenVentas2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrdenVentas3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrdenVentas3.Designer.cs">
+      <DependentUpon>frmOrdenVentas3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPallet.Designer.cs">
+      <DependentUpon>frmPallet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPallet1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPallet1.Designer.cs">
+      <DependentUpon>frmPallet1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPallet2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPallet2.Designer.cs">
+      <DependentUpon>frmPallet2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPallet3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPallet3.Designer.cs">
+      <DependentUpon>frmPallet3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPorteria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPorteria.Designer.cs">
+      <DependentUpon>frmPorteria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPorteria1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPorteria1.Designer.cs">
+      <DependentUpon>frmPorteria1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPorteria2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPorteria2.Designer.cs">
+      <DependentUpon>frmPorteria2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPorteria3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPorteria3.Designer.cs">
+      <DependentUpon>frmPorteria3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPorteria4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPorteria4.Designer.cs">
+      <DependentUpon>frmPorteria4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPorteria5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPorteria5.Designer.cs">
+      <DependentUpon>frmPorteria5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPorteria6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPorteria6.Designer.cs">
+      <DependentUpon>frmPorteria6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductores.Designer.cs">
+      <DependentUpon>frmProductores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductores1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductores1.Designer.cs">
+      <DependentUpon>frmProductores1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMP.Designer.cs">
+      <DependentUpon>frmRecepcionMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMP1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMP1.Designer.cs">
+      <DependentUpon>frmRecepcionMP1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMP2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMP2.Designer.cs">
+      <DependentUpon>frmRecepcionMP2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMP3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMP3.Designer.cs">
+      <DependentUpon>frmRecepcionMP3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMP4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMP4.Designer.cs">
+      <DependentUpon>frmRecepcionMP4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMP5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMP5.Designer.cs">
+      <DependentUpon>frmRecepcionMP5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMP6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMP6.Designer.cs">
+      <DependentUpon>frmRecepcionMP6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMP7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMP7.Designer.cs">
+      <DependentUpon>frmRecepcionMP7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMP8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMP8.Designer.cs">
+      <DependentUpon>frmRecepcionMP8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMP9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMP9.Designer.cs">
+      <DependentUpon>frmRecepcionMP9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPA1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPA1.Designer.cs">
+      <DependentUpon>frmRecepcionMPA1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPA2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPA2.Designer.cs">
+      <DependentUpon>frmRecepcionMPA2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPA3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPA3.Designer.cs">
+      <DependentUpon>frmRecepcionMPA3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPA4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPA4.Designer.cs">
+      <DependentUpon>frmRecepcionMPA4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPA5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPA5.Designer.cs">
+      <DependentUpon>frmRecepcionMPA5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPA6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPA6.Designer.cs">
+      <DependentUpon>frmRecepcionMPA6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPA7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPA7.Designer.cs">
+      <DependentUpon>frmRecepcionMPA7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPA8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPA8.Designer.cs">
+      <DependentUpon>frmRecepcionMPA8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPA9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPA9.Designer.cs">
+      <DependentUpon>frmRecepcionMPA9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPB1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPB1.Designer.cs">
+      <DependentUpon>frmRecepcionMPB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPB2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPB2.Designer.cs">
+      <DependentUpon>frmRecepcionMPB2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPB3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPB3.Designer.cs">
+      <DependentUpon>frmRecepcionMPB3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPB4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPB4.Designer.cs">
+      <DependentUpon>frmRecepcionMPB4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPB5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPB5.Designer.cs">
+      <DependentUpon>frmRecepcionMPB5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPB6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPB6.Designer.cs">
+      <DependentUpon>frmRecepcionMPB6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPB7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPB7.Designer.cs">
+      <DependentUpon>frmRecepcionMPB7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPB8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPB8.Designer.cs">
+      <DependentUpon>frmRecepcionMPB8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPB9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPB9.Designer.cs">
+      <DependentUpon>frmRecepcionMPB9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPC1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPC1.Designer.cs">
+      <DependentUpon>frmRecepcionMPC1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPC2.Designer.cs">
+      <DependentUpon>frmRecepcionMPC2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPC3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPC3.Designer.cs">
+      <DependentUpon>frmRecepcionMPC3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPC4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPC4.Designer.cs">
+      <DependentUpon>frmRecepcionMPC4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPC5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPC5.Designer.cs">
+      <DependentUpon>frmRecepcionMPC5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecepcionMPC6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcionMPC6.Designer.cs">
+      <DependentUpon>frmRecepcionMPC6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReceta.Designer.cs">
+      <DependentUpon>frmReceta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReceta2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReceta2.Designer.cs">
+      <DependentUpon>frmReceta2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReceta1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReceta1.Designer.cs">
+      <DependentUpon>frmReceta1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteProduccion.Designer.cs">
+      <DependentUpon>frmReporteProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomana.Designer.cs">
+      <DependentUpon>frmRomana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomana1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomana1.Designer.cs">
+      <DependentUpon>frmRomana1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomana2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomana2.Designer.cs">
+      <DependentUpon>frmRomana2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomana3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomana3.Designer.cs">
+      <DependentUpon>frmRomana3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomana4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomana4.Designer.cs">
+      <DependentUpon>frmRomana4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomana5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomana5.Designer.cs">
+      <DependentUpon>frmRomana5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomana6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomana6.Designer.cs">
+      <DependentUpon>frmRomana6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomana7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomana7.Designer.cs">
+      <DependentUpon>frmRomana7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomana8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomana8.Designer.cs">
+      <DependentUpon>frmRomana8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomana9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomana9.Designer.cs">
+      <DependentUpon>frmRomana9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomanaA1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomanaA1.Designer.cs">
+      <DependentUpon>frmRomanaA1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomanaA2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomanaA2.Designer.cs">
+      <DependentUpon>frmRomanaA2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomanaA3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomanaA3.Designer.cs">
+      <DependentUpon>frmRomanaA3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomanaA4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomanaA4.Designer.cs">
+      <DependentUpon>frmRomanaA4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomanaA5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomanaA5.Designer.cs">
+      <DependentUpon>frmRomanaA5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomanaA6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomanaA6.Designer.cs">
+      <DependentUpon>frmRomanaA6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomanaA7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomanaA7.Designer.cs">
+      <DependentUpon>frmRomanaA7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomanaA8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomanaA8.Designer.cs">
+      <DependentUpon>frmRomanaA8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRomanaA9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRomanaA9.Designer.cs">
+      <DependentUpon>frmRomanaA9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalidaProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalidaProduccion.Designer.cs">
+      <DependentUpon>frmSalidaProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalidaProduccion1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalidaProduccion1.Designer.cs">
+      <DependentUpon>frmSalidaProduccion1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_Empleados.Designer.cs">
+      <DependentUpon>frmSel_Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_ListaMateriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_ListaMateriales.Designer.cs">
+      <DependentUpon>frmSel_ListaMateriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_Lotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_Lotes.Designer.cs">
+      <DependentUpon>frmSel_Lotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_OrdendeCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_OrdendeCompra.Designer.cs">
+      <DependentUpon>frmSel_OrdendeCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_OrdendeCompra1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_OrdendeCompra1.Designer.cs">
+      <DependentUpon>frmSel_OrdendeCompra1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_OrdendeCompra2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_OrdendeCompra2.Designer.cs">
+      <DependentUpon>frmSel_OrdendeCompra2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_OrdendeCompra3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_OrdendeCompra3.Designer.cs">
+      <DependentUpon>frmSel_OrdendeCompra3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_OrdendeCompra4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_OrdendeCompra4.Designer.cs">
+      <DependentUpon>frmSel_OrdendeCompra4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_OrdendeVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_OrdendeVenta.Designer.cs">
+      <DependentUpon>frmSel_OrdendeVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_OrdenFabricacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_OrdenFabricacion.Designer.cs">
+      <DependentUpon>frmSel_OrdenFabricacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_OrdenFabricacion1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_OrdenFabricacion1.Designer.cs">
+      <DependentUpon>frmSel_OrdenFabricacion1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_Pallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_Pallet.Designer.cs">
+      <DependentUpon>frmSel_Pallet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_Productos.Designer.cs">
+      <DependentUpon>frmSel_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_Productos1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_Productos1.Designer.cs">
+      <DependentUpon>frmSel_Productos1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_Productos2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_Productos2.Designer.cs">
+      <DependentUpon>frmSel_Productos2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_Productos3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_Productos3.Designer.cs">
+      <DependentUpon>frmSel_Productos3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSel_SocioNegocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSel_SocioNegocio.Designer.cs">
+      <DependentUpon>frmSel_SocioNegocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSolicitudTraslado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSolicitudTraslado.Designer.cs">
+      <DependentUpon>frmSolicitudTraslado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSolicitudTraslado1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSolicitudTraslado1.Designer.cs">
+      <DependentUpon>frmSolicitudTraslado1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransferenciaStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransferenciaStock.Designer.cs">
+      <DependentUpon>frmTransferenciaStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransportistas1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransportistas1.Designer.cs">
+      <DependentUpon>frmTransportistas1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransportistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransportistas.Designer.cs">
+      <DependentUpon>frmTransportistas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUbicacionesInv1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUbicacionesInv1.Designer.cs">
+      <DependentUpon>frmUbicacionesInv1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUbicacionesInv2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUbicacionesInv2.Designer.cs">
+      <DependentUpon>frmUbicacionesInv2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUbicacionesInv3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUbicacionesInv3.Designer.cs">
+      <DependentUpon>frmUbicacionesInv3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUbicacionesInv4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUbicacionesInv4.Designer.cs">
+      <DependentUpon>frmUbicacionesInv4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUbicacionesMasivas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUbicacionesMasivas.Designer.cs">
+      <DependentUpon>frmUbicacionesMasivas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUbicacionPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUbicacionPP.Designer.cs">
+      <DependentUpon>frmUbicacionPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUbicacionPP1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUbicacionPP1.Designer.cs">
+      <DependentUpon>frmUbicacionPP1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalibres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalibres.Designer.cs">
+      <DependentUpon>frmCalibres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVariedad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVariedad.Designer.cs">
+      <DependentUpon>frmVariedad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVariedad1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVariedad1.Designer.cs">
+      <DependentUpon>frmVariedad1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP01.Designer.cs">
+      <DependentUpon>FRP01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP02.Designer.cs">
+      <DependentUpon>FRP02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP03.Designer.cs">
+      <DependentUpon>FRP03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP04.Designer.cs">
+      <DependentUpon>FRP04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP05.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP05.Designer.cs">
+      <DependentUpon>FRP05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP06.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP06.Designer.cs">
+      <DependentUpon>FRP06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP07.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP07.Designer.cs">
+      <DependentUpon>FRP07.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP08.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP08.Designer.cs">
+      <DependentUpon>FRP08.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP09.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP09.Designer.cs">
+      <DependentUpon>FRP09.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP10.Designer.cs">
+      <DependentUpon>FRP10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP11.Designer.cs">
+      <DependentUpon>FRP11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP12.Designer.cs">
+      <DependentUpon>FRP12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP13.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP13.Designer.cs">
+      <DependentUpon>FRP13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP14.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP14.Designer.cs">
+      <DependentUpon>FRP14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP15.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP15.Designer.cs">
+      <DependentUpon>FRP15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP16.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP16.Designer.cs">
+      <DependentUpon>FRP16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP17.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP17.Designer.cs">
+      <DependentUpon>FRP17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP18.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP18.Designer.cs">
+      <DependentUpon>FRP18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP19.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP19.Designer.cs">
+      <DependentUpon>FRP19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRP20.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRP20.Designer.cs">
+      <DependentUpon>FRP20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet.cs">
+      <DependentUpon>HDV_P03DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet11.cs">
+      <DependentUpon>HDV_P03DataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet19.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet23.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet23.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet24.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet24.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet25.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet25.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet26.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet26.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet27.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet27.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet28.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet28.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet29.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet29.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet30.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet30.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet31.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet32.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet32.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet33.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet33.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet34.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet34.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet35.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet35.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet36.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet36.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet37.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet37.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet38.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet38.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet39.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet39.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet4.cs">
+      <DependentUpon>HDV_P03DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet40.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet40.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet41.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet41.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet42.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet42.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet43.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet43.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet44.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet44.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet45.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet45.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet46.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet46.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet8.cs">
+      <DependentUpon>HDV_P03DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDV_P03DataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDV_P03DataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MDIPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIPrincipal.Designer.cs">
+      <DependentUpon>MDIPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="frmAsistencia.resx">
+      <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsistencia1.resx">
+      <DependentUpon>frmAsistencia1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBinsProduccion.resx">
+      <DependentUpon>frmBinsProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBinsProduccion1.resx">
+      <DependentUpon>frmBinsProduccion1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBLoqLotes.resx">
+      <DependentUpon>frmBLoqLotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalendarioOperadores.resx">
+      <DependentUpon>frmCalendarioOperadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalibres1.resx">
+      <DependentUpon>frmCalibres1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMP.resx">
+      <DependentUpon>frmCalidadMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMP1.resx">
+      <DependentUpon>frmCalidadMP1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMP2.resx">
+      <DependentUpon>frmCalidadMP2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMP3.resx">
+      <DependentUpon>frmCalidadMP3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMP4.resx">
+      <DependentUpon>frmCalidadMP4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMP5.resx">
+      <DependentUpon>frmCalidadMP5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMP6.resx">
+      <DependentUpon>frmCalidadMP6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMP7.resx">
+      <DependentUpon>frmCalidadMP7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMP8.resx">
+      <DependentUpon>frmCalidadMP8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMP9.resx">
+      <DependentUpon>frmCalidadMP9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPA1.resx">
+      <DependentUpon>frmCalidadMPA1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPA2.resx">
+      <DependentUpon>frmCalidadMPA2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPA3.resx">
+      <DependentUpon>frmCalidadMPA3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPA3_A.resx">
+      <DependentUpon>frmCalidadMPA3_A.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPA4.resx">
+      <DependentUpon>frmCalidadMPA4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPA6.resx">
+      <DependentUpon>frmCalidadMPA6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPA7.resx">
+      <DependentUpon>frmCalidadMPA7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPA8.resx">
+      <DependentUpon>frmCalidadMPA8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPA9.resx">
+      <DependentUpon>frmCalidadMPA9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPB1.resx">
+      <DependentUpon>frmCalidadMPB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPB2.resx">
+      <DependentUpon>frmCalidadMPB2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPB3.resx">
+      <DependentUpon>frmCalidadMPB3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPB4.resx">
+      <DependentUpon>frmCalidadMPB4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPB5.resx">
+      <DependentUpon>frmCalidadMPB5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPB6.resx">
+      <DependentUpon>frmCalidadMPB6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPB7.resx">
+      <DependentUpon>frmCalidadMPB7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadMPB8.resx">
+      <DependentUpon>frmCalidadMPB8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPP.resx">
+      <DependentUpon>frmCalidadPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPP1.resx">
+      <DependentUpon>frmCalidadPP1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPP2.resx">
+      <DependentUpon>frmCalidadPP2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPP3.resx">
+      <DependentUpon>frmCalidadPP3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPP4.resx">
+      <DependentUpon>frmCalidadPP4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPP5.resx">
+      <DependentUpon>frmCalidadPP5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPP6.resx">
+      <DependentUpon>frmCalidadPP6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPP7.resx">
+      <DependentUpon>frmCalidadPP7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPP8.resx">
+      <DependentUpon>frmCalidadPP8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPP9.resx">
+      <DependentUpon>frmCalidadPP9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPA1.resx">
+      <DependentUpon>frmCalidadPPA1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPA2.resx">
+      <DependentUpon>frmCalidadPPA2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPA3.resx">
+      <DependentUpon>frmCalidadPPA3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPA4.resx">
+      <DependentUpon>frmCalidadPPA4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPA5.resx">
+      <DependentUpon>frmCalidadPPA5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPA6.resx">
+      <DependentUpon>frmCalidadPPA6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPA7.resx">
+      <DependentUpon>frmCalidadPPA7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPA8.resx">
+      <DependentUpon>frmCalidadPPA8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPA9.resx">
+      <DependentUpon>frmCalidadPPA9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPB0.resx">
+      <DependentUpon>frmCalidadPPB0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPB1.resx">
+      <DependentUpon>frmCalidadPPB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPB2.resx">
+      <DependentUpon>frmCalidadPPB2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPB3.resx">
+      <DependentUpon>frmCalidadPPB3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPB4.resx">
+      <DependentUpon>frmCalidadPPB4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPB5.resx">
+      <DependentUpon>frmCalidadPPB5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPB6.resx">
+      <DependentUpon>frmCalidadPPB6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPB7.resx">
+      <DependentUpon>frmCalidadPPB7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPB8.resx">
+      <DependentUpon>frmCalidadPPB8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPB9.resx">
+      <DependentUpon>frmCalidadPPB9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPC1.resx">
+      <DependentUpon>frmCalidadPPC1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidadPPC2.resx">
+      <DependentUpon>frmCalidadPPC2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmColor.resx">
+      <DependentUpon>frmColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmColor1.resx">
+      <DependentUpon>frmColor1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfiguracion.resx">
+      <DependentUpon>frmConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaLote.resx">
+      <DependentUpon>frmConsultaLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmControlProductor.resx">
+      <DependentUpon>frmControlProductor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCorrigeCosto.resx">
+      <DependentUpon>frmCorrigeCosto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFumigado.resx">
+      <DependentUpon>frmFumigado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFumigado1.resx">
+      <DependentUpon>frmFumigado1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFumigado2.resx">
+      <DependentUpon>frmFumigado2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFumigado3.resx">
+      <DependentUpon>frmFumigado3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFumigado4.resx">
+      <DependentUpon>frmFumigado4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInforme1.resx">
+      <DependentUpon>frmInforme1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoginSupervisor.resx">
+      <DependentUpon>frmLoginSupervisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOperadorCracker.resx">
+      <DependentUpon>frmOperadorCracker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOperadorCracker1.resx">
+      <DependentUpon>frmOperadorCracker1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacion.resx">
+      <DependentUpon>frmOrdenFabricacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacion1.resx">
+      <DependentUpon>frmOrdenFabricacion1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacion2.resx">
+      <DependentUpon>frmOrdenFabricacion2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacion3.resx">
+      <DependentUpon>frmOrdenFabricacion3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacion4.resx">
+      <DependentUpon>frmOrdenFabricacion4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacion5.resx">
+      <DependentUpon>frmOrdenFabricacion5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacion6.resx">
+      <DependentUpon>frmOrdenFabricacion6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacion7.resx">
+      <DependentUpon>frmOrdenFabricacion7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacion8.resx">
+      <DependentUpon>frmOrdenFabricacion8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionCM.resx">
+      <DependentUpon>frmOrdenFabricacionCM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionCO.resx">
+      <DependentUpon>frmOrdenFabricacionCO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionCO1.resx">
+      <DependentUpon>frmOrdenFabricacionCO1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionCO2.resx">
+      <DependentUpon>frmOrdenFabricacionCO2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionCO3.resx">
+      <DependentUpon>frmOrdenFabricacionCO3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionINS.resx">
+      <DependentUpon>frmOrdenFabricacionINS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionINS1.resx">
+      <DependentUpon>frmOrdenFabricacionINS1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionINS2.resx">
+      <DependentUpon>frmOrdenFabricacionINS2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionINS3.resx">
+      <DependentUpon>frmOrdenFabricacionINS3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionINS4.resx">
+      <DependentUpon>frmOrdenFabricacionINS4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionINS5.resx">
+      <DependentUpon>frmOrdenFabricacionINS5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionINS6.resx">
+      <DependentUpon>frmOrdenFabricacionINS6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionINS7.resx">
+      <DependentUpon>frmOrdenFabricacionINS7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR.resx">
+      <DependentUpon>frmOrdenFabricacionTR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR1_AR.resx">
+      <DependentUpon>frmOrdenFabricacionTR1_AR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR1_R.resx">
+      <DependentUpon>frmOrdenFabricacionTR1_R.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR1_A.resx">
+      <DependentUpon>frmOrdenFabricacionTR1_A.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR2.resx">
+      <DependentUpon>frmOrdenFabricacionTR2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR2A.resx">
+      <DependentUpon>frmOrdenFabricacionTR2A.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR4_A.resx">
+      <DependentUpon>frmOrdenFabricacionTR4_A.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR4_AR.resx">
+      <DependentUpon>frmOrdenFabricacionTR4_AR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR4_R.resx">
+      <DependentUpon>frmOrdenFabricacionTR4_R.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR5.resx">
+      <DependentUpon>frmOrdenFabricacionTR5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR6.resx">
+      <DependentUpon>frmOrdenFabricacionTR6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR7_A.resx">
+      <DependentUpon>frmOrdenFabricacionTR7_A.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR7_A1.resx">
+      <DependentUpon>frmOrdenFabricacionTR7_A1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR7_AR.resx">
+      <DependentUpon>frmOrdenFabricacionTR7_AR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR7_R.resx">
+      <DependentUpon>frmOrdenFabricacionTR7_R.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR8_A.resx">
+      <DependentUpon>frmOrdenFabricacionTR8_A.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR8_AR.resx">
+      <DependentUpon>frmOrdenFabricacionTR8_AR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR8_R.resx">
+      <DependentUpon>frmOrdenFabricacionTR8_R.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR9.resx">
+      <DependentUpon>frmOrdenFabricacionTR9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR9_A.resx">
+      <DependentUpon>frmOrdenFabricacionTR9_A.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTR9_B.resx">
+      <DependentUpon>frmOrdenFabricacionTR9_B.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTRA1.resx">
+      <DependentUpon>frmOrdenFabricacionTRA1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTRA2.resx">
+      <DependentUpon>frmOrdenFabricacionTRA2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTRA3.resx">
+      <DependentUpon>frmOrdenFabricacionTRA3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTrz.resx">
+      <DependentUpon>frmOrdenFabricacionTrz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTrz1.resx">
+      <DependentUpon>frmOrdenFabricacionTrz1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenFabricacionTrz2.resx">
+      <DependentUpon>frmOrdenFabricacionTrz2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenVentas.resx">
+      <DependentUpon>frmOrdenVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenVentas1.resx">
+      <DependentUpon>frmOrdenVentas1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenVentas2.resx">
+      <DependentUpon>frmOrdenVentas2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrdenVentas3.resx">
+      <DependentUpon>frmOrdenVentas3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPallet.resx">
+      <DependentUpon>frmPallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPallet1.resx">
+      <DependentUpon>frmPallet1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPallet2.resx">
+      <DependentUpon>frmPallet2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPallet3.resx">
+      <DependentUpon>frmPallet3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPorteria.resx">
+      <DependentUpon>frmPorteria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPorteria1.resx">
+      <DependentUpon>frmPorteria1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPorteria2.resx">
+      <DependentUpon>frmPorteria2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPorteria3.resx">
+      <DependentUpon>frmPorteria3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPorteria4.resx">
+      <DependentUpon>frmPorteria4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPorteria5.resx">
+      <DependentUpon>frmPorteria5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPorteria6.resx">
+      <DependentUpon>frmPorteria6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductores.resx">
+      <DependentUpon>frmProductores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductores1.resx">
+      <DependentUpon>frmProductores1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMP.resx">
+      <DependentUpon>frmRecepcionMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMP1.resx">
+      <DependentUpon>frmRecepcionMP1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMP2.resx">
+      <DependentUpon>frmRecepcionMP2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMP3.resx">
+      <DependentUpon>frmRecepcionMP3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMP4.resx">
+      <DependentUpon>frmRecepcionMP4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMP5.resx">
+      <DependentUpon>frmRecepcionMP5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMP6.resx">
+      <DependentUpon>frmRecepcionMP6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMP7.resx">
+      <DependentUpon>frmRecepcionMP7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMP8.resx">
+      <DependentUpon>frmRecepcionMP8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMP9.resx">
+      <DependentUpon>frmRecepcionMP9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPA1.resx">
+      <DependentUpon>frmRecepcionMPA1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPA2.resx">
+      <DependentUpon>frmRecepcionMPA2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPA3.resx">
+      <DependentUpon>frmRecepcionMPA3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPA4.resx">
+      <DependentUpon>frmRecepcionMPA4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPA5.resx">
+      <DependentUpon>frmRecepcionMPA5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPA6.resx">
+      <DependentUpon>frmRecepcionMPA6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPA7.resx">
+      <DependentUpon>frmRecepcionMPA7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPA8.resx">
+      <DependentUpon>frmRecepcionMPA8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPA9.resx">
+      <DependentUpon>frmRecepcionMPA9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPB1.resx">
+      <DependentUpon>frmRecepcionMPB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPB2.resx">
+      <DependentUpon>frmRecepcionMPB2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPB3.resx">
+      <DependentUpon>frmRecepcionMPB3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPB4.resx">
+      <DependentUpon>frmRecepcionMPB4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPB5.resx">
+      <DependentUpon>frmRecepcionMPB5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPB6.resx">
+      <DependentUpon>frmRecepcionMPB6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPB7.resx">
+      <DependentUpon>frmRecepcionMPB7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPB8.resx">
+      <DependentUpon>frmRecepcionMPB8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPB9.resx">
+      <DependentUpon>frmRecepcionMPB9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPC1.resx">
+      <DependentUpon>frmRecepcionMPC1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPC2.resx">
+      <DependentUpon>frmRecepcionMPC2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPC3.resx">
+      <DependentUpon>frmRecepcionMPC3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPC4.resx">
+      <DependentUpon>frmRecepcionMPC4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPC5.resx">
+      <DependentUpon>frmRecepcionMPC5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcionMPC6.resx">
+      <DependentUpon>frmRecepcionMPC6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReceta.resx">
+      <DependentUpon>frmReceta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReceta2.resx">
+      <DependentUpon>frmReceta2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReceta1.resx">
+      <DependentUpon>frmReceta1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteProduccion.resx">
+      <DependentUpon>frmReporteProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomana.resx">
+      <DependentUpon>frmRomana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomana1.resx">
+      <DependentUpon>frmRomana1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomana2.resx">
+      <DependentUpon>frmRomana2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomana3.resx">
+      <DependentUpon>frmRomana3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomana4.resx">
+      <DependentUpon>frmRomana4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomana5.resx">
+      <DependentUpon>frmRomana5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomana6.resx">
+      <DependentUpon>frmRomana6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomana7.resx">
+      <DependentUpon>frmRomana7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomana8.resx">
+      <DependentUpon>frmRomana8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomana9.resx">
+      <DependentUpon>frmRomana9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomanaA1.resx">
+      <DependentUpon>frmRomanaA1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomanaA2.resx">
+      <DependentUpon>frmRomanaA2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomanaA3.resx">
+      <DependentUpon>frmRomanaA3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomanaA4.resx">
+      <DependentUpon>frmRomanaA4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomanaA5.resx">
+      <DependentUpon>frmRomanaA5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomanaA6.resx">
+      <DependentUpon>frmRomanaA6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomanaA7.resx">
+      <DependentUpon>frmRomanaA7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomanaA8.resx">
+      <DependentUpon>frmRomanaA8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRomanaA9.resx">
+      <DependentUpon>frmRomanaA9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalidaProduccion.resx">
+      <DependentUpon>frmSalidaProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalidaProduccion1.resx">
+      <DependentUpon>frmSalidaProduccion1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_Empleados.resx">
+      <DependentUpon>frmSel_Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_ListaMateriales.resx">
+      <DependentUpon>frmSel_ListaMateriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_Lotes.resx">
+      <DependentUpon>frmSel_Lotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_OrdendeCompra.resx">
+      <DependentUpon>frmSel_OrdendeCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_OrdendeCompra1.resx">
+      <DependentUpon>frmSel_OrdendeCompra1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_OrdendeCompra2.resx">
+      <DependentUpon>frmSel_OrdendeCompra2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_OrdendeCompra3.resx">
+      <DependentUpon>frmSel_OrdendeCompra3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_OrdendeCompra4.resx">
+      <DependentUpon>frmSel_OrdendeCompra4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_OrdendeVenta.resx">
+      <DependentUpon>frmSel_OrdendeVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_OrdenFabricacion.resx">
+      <DependentUpon>frmSel_OrdenFabricacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_OrdenFabricacion1.resx">
+      <DependentUpon>frmSel_OrdenFabricacion1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_Pallet.resx">
+      <DependentUpon>frmSel_Pallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_Productos.resx">
+      <DependentUpon>frmSel_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_Productos1.resx">
+      <DependentUpon>frmSel_Productos1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_Productos2.resx">
+      <DependentUpon>frmSel_Productos2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_Productos3.resx">
+      <DependentUpon>frmSel_Productos3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSel_SocioNegocio.resx">
+      <DependentUpon>frmSel_SocioNegocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSolicitudTraslado.resx">
+      <DependentUpon>frmSolicitudTraslado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSolicitudTraslado1.resx">
+      <DependentUpon>frmSolicitudTraslado1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransferenciaStock.resx">
+      <DependentUpon>frmTransferenciaStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransportistas.resx">
+      <DependentUpon>frmTransportistas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransportistas1.resx">
+      <DependentUpon>frmTransportistas1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUbicacionesInv1.resx">
+      <DependentUpon>frmUbicacionesInv1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUbicacionesInv2.resx">
+      <DependentUpon>frmUbicacionesInv2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUbicacionesInv3.resx">
+      <DependentUpon>frmUbicacionesInv3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUbicacionesInv4.resx">
+      <DependentUpon>frmUbicacionesInv4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUbicacionesMasivas.resx">
+      <DependentUpon>frmUbicacionesMasivas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUbicacionPP.resx">
+      <DependentUpon>frmUbicacionPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUbicacionPP1.resx">
+      <DependentUpon>frmUbicacionPP1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalibres.resx">
+      <DependentUpon>frmCalibres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVariedad.resx">
+      <DependentUpon>frmVariedad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVariedad1.resx">
+      <DependentUpon>frmVariedad1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP01.resx">
+      <DependentUpon>FRP01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP02.resx">
+      <DependentUpon>FRP02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP03.resx">
+      <DependentUpon>FRP03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP04.resx">
+      <DependentUpon>FRP04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP05.resx">
+      <DependentUpon>FRP05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP06.resx">
+      <DependentUpon>FRP06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP07.resx">
+      <DependentUpon>FRP07.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP08.resx">
+      <DependentUpon>FRP08.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP09.resx">
+      <DependentUpon>FRP09.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP10.resx">
+      <DependentUpon>FRP10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP11.resx">
+      <DependentUpon>FRP11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP12.resx">
+      <DependentUpon>FRP12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP13.resx">
+      <DependentUpon>FRP13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP14.resx">
+      <DependentUpon>FRP14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP15.resx">
+      <DependentUpon>FRP15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP16.resx">
+      <DependentUpon>FRP16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP17.resx">
+      <DependentUpon>FRP17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP18.resx">
+      <DependentUpon>FRP18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP19.resx">
+      <DependentUpon>FRP19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRP20.resx">
+      <DependentUpon>FRP20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIPrincipal.resx">
+      <DependentUpon>MDIPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reportes\Report10.rdlc" />
+    <EmbeddedResource Include="Reportes\Report11.rdlc" />
+    <EmbeddedResource Include="Reportes\Report12.rdlc" />
+    <EmbeddedResource Include="Reportes\Report13.rdlc" />
+    <EmbeddedResource Include="Reportes\Report14.rdlc" />
+    <EmbeddedResource Include="Reportes\Report7v1.rdlc" />
+    <EmbeddedResource Include="Reportes\Report7_C.rdlc" />
+    <EmbeddedResource Include="Reportes\Report7_D.rdlc" />
+    <EmbeddedResource Include="Reportes\Report8v1.rdlc" />
+    <EmbeddedResource Include="Reportes\Report8v2.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA2_A.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportB4_A.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportD3_A1.rdlc" />
+    <EmbeddedResource Include="Reportes\Report7_A.rdlc" />
+    <EmbeddedResource Include="Reportes\Report7_B.rdlc" />
+    <EmbeddedResource Include="Reportes\Report9.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA5_1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportD4.rdlc" />
+    <EmbeddedResource Include="Reportes\Report7.rdlc" />
+    <EmbeddedResource Include="Reportes\Report9_A.rdlc" />
+    <EmbeddedResource Include="Reportes\Report9_R.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportC8.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportB2.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA1_AR.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA1_R.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA2_AR.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA2_R.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA7_A.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA7_R.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA7_AR.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA6.rdlc" />
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\Report2.rdlc" />
+    <EmbeddedResource Include="Reportes\Report3.rdlc" />
+    <EmbeddedResource Include="Reportes\Report4.rdlc" />
+    <EmbeddedResource Include="Reportes\Report5.rdlc" />
+    <EmbeddedResource Include="Reportes\Report6.rdlc" />
+    <EmbeddedResource Include="Reportes\Report8.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA4.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA3.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA1_A.rdlc" />
+    <EmbeddedResource Include="Reportes\Report9_AR.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA8.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportA9.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportB1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportB3.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportB4.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportB5.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportB6.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportB8.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportC7.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportB9.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportC1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportC5.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportC2.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportC4.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportC3.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportC6.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportC9.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportD1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportD2.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportD3.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportD5.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportD6.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportD7.rdlc" />
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <Fakes Include="Fakes\SAPBusinessOneSDK.fakes" />
+    <None Include="HDV_P03DataSet.xsc">
+      <DependentUpon>HDV_P03DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet.xss">
+      <DependentUpon>HDV_P03DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet1.xsc">
+      <DependentUpon>HDV_P03DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet1.xss">
+      <DependentUpon>HDV_P03DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet10.xsc">
+      <DependentUpon>HDV_P03DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet10.xss">
+      <DependentUpon>HDV_P03DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet11.xsc">
+      <DependentUpon>HDV_P03DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet11.xss">
+      <DependentUpon>HDV_P03DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet12.xsc">
+      <DependentUpon>HDV_P03DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet12.xss">
+      <DependentUpon>HDV_P03DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet13.xsc">
+      <DependentUpon>HDV_P03DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet13.xss">
+      <DependentUpon>HDV_P03DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet14.xsc">
+      <DependentUpon>HDV_P03DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet14.xss">
+      <DependentUpon>HDV_P03DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet15.xsc">
+      <DependentUpon>HDV_P03DataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet15.xss">
+      <DependentUpon>HDV_P03DataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet16.xsc">
+      <DependentUpon>HDV_P03DataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet16.xss">
+      <DependentUpon>HDV_P03DataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet17.xsc">
+      <DependentUpon>HDV_P03DataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet17.xss">
+      <DependentUpon>HDV_P03DataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet18.xsc">
+      <DependentUpon>HDV_P03DataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet18.xss">
+      <DependentUpon>HDV_P03DataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet19.xsc">
+      <DependentUpon>HDV_P03DataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet19.xss">
+      <DependentUpon>HDV_P03DataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet2.xsc">
+      <DependentUpon>HDV_P03DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet2.xss">
+      <DependentUpon>HDV_P03DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet20.xsc">
+      <DependentUpon>HDV_P03DataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet20.xss">
+      <DependentUpon>HDV_P03DataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet21.xsc">
+      <DependentUpon>HDV_P03DataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet21.xss">
+      <DependentUpon>HDV_P03DataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet22.xsc">
+      <DependentUpon>HDV_P03DataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet22.xss">
+      <DependentUpon>HDV_P03DataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet23.xsc">
+      <DependentUpon>HDV_P03DataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet23.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet23.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet23.xss">
+      <DependentUpon>HDV_P03DataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet24.xsc">
+      <DependentUpon>HDV_P03DataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet24.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet24.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet24.xss">
+      <DependentUpon>HDV_P03DataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet25.xsc">
+      <DependentUpon>HDV_P03DataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet25.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet25.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet25.xss">
+      <DependentUpon>HDV_P03DataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet26.xsc">
+      <DependentUpon>HDV_P03DataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet26.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet26.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet26.xss">
+      <DependentUpon>HDV_P03DataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet27.xsc">
+      <DependentUpon>HDV_P03DataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet27.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet27.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet27.xss">
+      <DependentUpon>HDV_P03DataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet28.xsc">
+      <DependentUpon>HDV_P03DataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet28.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet28.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet28.xss">
+      <DependentUpon>HDV_P03DataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet29.xsc">
+      <DependentUpon>HDV_P03DataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet29.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet29.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet29.xss">
+      <DependentUpon>HDV_P03DataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet3.xsc">
+      <DependentUpon>HDV_P03DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet3.xss">
+      <DependentUpon>HDV_P03DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet30.xsc">
+      <DependentUpon>HDV_P03DataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet30.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet30.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet30.xss">
+      <DependentUpon>HDV_P03DataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet31.xsc">
+      <DependentUpon>HDV_P03DataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet31.xss">
+      <DependentUpon>HDV_P03DataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet32.xsc">
+      <DependentUpon>HDV_P03DataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet32.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet32.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet32.xss">
+      <DependentUpon>HDV_P03DataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet33.xsc">
+      <DependentUpon>HDV_P03DataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet33.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet33.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet33.xss">
+      <DependentUpon>HDV_P03DataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet34.xsc">
+      <DependentUpon>HDV_P03DataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet34.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet34.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet34.xss">
+      <DependentUpon>HDV_P03DataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet35.xsc">
+      <DependentUpon>HDV_P03DataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet35.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet35.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet35.xss">
+      <DependentUpon>HDV_P03DataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet36.xsc">
+      <DependentUpon>HDV_P03DataSet36.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet36.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet36.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet36.xss">
+      <DependentUpon>HDV_P03DataSet36.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet37.xsc">
+      <DependentUpon>HDV_P03DataSet37.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet37.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet37.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet37.xss">
+      <DependentUpon>HDV_P03DataSet37.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet38.xsc">
+      <DependentUpon>HDV_P03DataSet38.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet38.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet38.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet38.xss">
+      <DependentUpon>HDV_P03DataSet38.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet39.xsc">
+      <DependentUpon>HDV_P03DataSet39.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet39.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet39.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet39.xss">
+      <DependentUpon>HDV_P03DataSet39.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet4.xsc">
+      <DependentUpon>HDV_P03DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet4.xss">
+      <DependentUpon>HDV_P03DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet40.xsc">
+      <DependentUpon>HDV_P03DataSet40.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet40.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet40.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet40.xss">
+      <DependentUpon>HDV_P03DataSet40.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet41.xsc">
+      <DependentUpon>HDV_P03DataSet41.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet41.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet41.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet41.xss">
+      <DependentUpon>HDV_P03DataSet41.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet42.xsc">
+      <DependentUpon>HDV_P03DataSet42.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet42.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet42.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet42.xss">
+      <DependentUpon>HDV_P03DataSet42.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet43.xsc">
+      <DependentUpon>HDV_P03DataSet43.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet43.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet43.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet43.xss">
+      <DependentUpon>HDV_P03DataSet43.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet44.xsc">
+      <DependentUpon>HDV_P03DataSet44.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet44.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet44.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet44.xss">
+      <DependentUpon>HDV_P03DataSet44.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet45.xsc">
+      <DependentUpon>HDV_P03DataSet45.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet45.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet45.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet45.xss">
+      <DependentUpon>HDV_P03DataSet45.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet46.xsc">
+      <DependentUpon>HDV_P03DataSet46.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet46.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet46.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet46.xss">
+      <DependentUpon>HDV_P03DataSet46.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet5.xsc">
+      <DependentUpon>HDV_P03DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet5.xss">
+      <DependentUpon>HDV_P03DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet6.xsc">
+      <DependentUpon>HDV_P03DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet6.xss">
+      <DependentUpon>HDV_P03DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet7.xsc">
+      <DependentUpon>HDV_P03DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet7.xss">
+      <DependentUpon>HDV_P03DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet8.xsc">
+      <DependentUpon>HDV_P03DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet8.xss">
+      <DependentUpon>HDV_P03DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet9.xsc">
+      <DependentUpon>HDV_P03DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="HDV_P03DataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDV_P03DataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDV_P03DataSet9.xss">
+      <DependentUpon>HDV_P03DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{9ca92e2b-ec9c-42c3-8544-9671061b2035}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
+      <Project>{890f4c23-c419-452f-86eb-81a4c210e5f6}</Project>
+      <Name>CapaEntidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{e32cbe2e-7b27-4e42-829e-c9ba829f42d7}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrmBatch\FrmBatch.csproj">
+      <Project>{b745d9ad-9c95-41ff-aa68-68c8b028aa52}</Project>
+      <Name>FrmBatch</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo1_SAP.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo2_SAP.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WIA">
+      <Guid>{94A0E92D-43C0-494E-AC29-FD45948A5221}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton_sap.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Box_checked_all%29.ico" />
+    <None Include="Resources\16 %28Box_unchecked_all%29.ico" />
+    <None Include="Resources\16 %28Settings%29.ico" />
+    <None Include="Resources\16 %28Minus%29.ico" />
+    <None Include="Resources\16 %28Rename%29.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\tumblr_liovw.gif" />
+    <None Include="Resources\user_police_female.png" />
+    <None Include="Resources\16 %28File new%29.ico" />
+    <None Include="Resources\16 %28Build%29.ico" />
+    <None Include="Resources\16 %28Folder search%29.ico" />
+    <None Include="Resources\16 %28Folder add%29.ico" />
+    <None Include="Resources\16 %28Folder download%29.ico" />
+    <None Include="Resources\16 %28Delete_over%29.ico" />
+    <None Include="Resources\lorry.png" />
+    <None Include="Resources\lorry_add.png" />
+    <None Include="Resources\lorry_add1.png" />
+    <None Include="Resources\license_management.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\accept.png" />
+    <None Include="Resources\blanco.png" />
+    <None Include="Resources\16 %28Convert%29.ico" />
+    <None Include="Resources\action_refresh.bmp" />
+    <None Include="Resources\16 %28Refresh%29.ico" />
+    <None Include="Resources\16 %28Fill right%29.ico" />
+    <None Include="Resources\16 %28Users%29.ico" />
+    <None Include="Resources\16 %28Indent increase-2%29.ico" />
+    <None Include="Resources\16 %28Play%29.ico" />
+    <None Include="Resources\16 %28Barcode%29.ico" />
+    <Content Include="16 %28Design%29.ico" />
+    <None Include="Resources\codigo.JPG" />
+    <None Include="Resources\16 %28Db insert%29.ico" />
+    <None Include="Resources\16 %28Header first%29.ico" />
+    <None Include="Resources\16 %28Insert bitmap%29.ico" />
+    <None Include="Resources\16 %28Box_unchecked%29.ico" />
+    <None Include="Resources\16 %28Box_checked%29.ico" />
+    <None Include="Resources\Autorizacion.JPG" />
+    <None Include="Resources\16 %28Sum%29.ico" />
+    <None Include="Resources\16 %28Print%29.ico" />
+    <None Include="Resources\16 %28Key%29.ico" />
+    <None Include="Resources\16 %28Decimals decrease%29.ico" />
+    <None Include="Resources\16 %28Plus%29.ico" />
+    <None Include="Resources\16 %28Save%29.ico" />
+    <None Include="Resources\16 %28Function%29.ico" />
+    <Content Include="Resources\bullet_error.png" />
+    <None Include="Resources\bullet_error1.png" />
+    <None Include="Resources\procesando.gif" />
+    <Content Include="Resources\sheet_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

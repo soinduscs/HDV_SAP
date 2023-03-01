@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Image Name="Image2">
+        <Source>Database</Source>
+        <Value>=First(Fields!U_Imagen.Value, "DataSet1")</Value>
+        <MIMEType>image/bmp</MIMEType>
+        <Sizing>Fit</Sizing>
+        <Top>0.3175cm</Top>
+        <Left>0.3175cm</Left>
+        <Height>25.97396cm</Height>
+        <Width>20.9109cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+    </ReportItems>
+    <Height>10.46875in</Height>
+    <Style />
+  </Body>
+  <Width>8.46875in</Width>
+  <Page>
+    <PageHeight>27.94cm</PageHeight>
+    <PageWidth>21.59cm</PageWidth>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="HDV_P03DataSet6">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>296895d8-68fb-43fb-a107-d0e3c02e5c7f</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>HDV_P03DataSet6</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DocEntry">
+          <DataField>DocEntry</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="LineId">
+          <DataField>LineId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="VisOrder">
+          <DataField>VisOrder</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Object">
+          <DataField>Object</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LogInst">
+          <DataField>LogInst</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="U_Imagen">
+          <DataField>U_Imagen</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>HDV_P03DataSet6</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\dgarcia\Documents\Proyectos\HDV_SAP\FrmProcesos\HDV_P03DataSet6.xsd</rd:SchemaPath>
+        <rd:TableName>SAPB1_ACCESO1</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>SAPB1_ACCESO1TableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="sheet_white">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAA0gAAAJoCAIAAADTXlYOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAArrSURBVHhe7dYBDQAADMOg+ze9+2hABTcAABLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwA
+ACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLE
+DgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAg
+QuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgQuwAACLEDgAgYXuNp3I4dIHFMAAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>2bd01fa7-1129-40af-a406-6f08be30eb62</rd:ReportID>
+</Report>

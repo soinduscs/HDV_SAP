@@ -1,0 +1,83 @@
+﻿*{
+  box-sizing: border-box;
+}
+
+body {
+  background:#ffffff;
+  font-family:'Cuprum', sans-serif;
+  font-size: 12px;
+}
+
+img {
+    width: 20px;
+    height: 23px;
+    padding: 5px;
+    border: 1px solid green;
+    float: right;
+    overflow: auto;
+}
+
+.container {
+    border-radius:5px;
+    border: 3px solid #3754b4;
+    background-color: #ccd9e3;
+    margin: auto;
+    width: 100%;
+    height:auto;
+    padding: 10px;
+    overflow:hidden;
+}
+
+table, td, th {
+  border: 0px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  height: 20px;
+  width: 100px;
+  text-align: left;
+}
+
+ .stock label{
+
+     width:380px;
+ 
+ }
+
+ .navbar-inverse {
+  background-color: #4176f4 !important;
+}
+
+ .navbar-inverse .navbar-text {
+    color: #fff !important;
+}
+
+ .navbar-text {
+    margin-top: 7px !important;
+    margin-bottom: 7px !important;
+    margin-left: 7px !important;
+}
+
+
+ @media screen and (max-width: 375px) {
+  .stock label{
+
+    width: 325px;
+    margin-top: 0;
+  }
+
+}
+
+   /* latin-ext */
+@font-face {
+  font-family: Cuprum;
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Cuprum/Cuprum-Regular.ttf) format("truetype");
+
+}

@@ -1,0 +1,11 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+
+.barra a{
+    font-size:12px; 
+    display:block;
+    text-align:center;
+    color:#ffffff;
+}
